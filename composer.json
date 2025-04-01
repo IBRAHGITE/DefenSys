@@ -1,0 +1,17 @@
+{
+    "name": "bramadjire/defen-sys",
+    "description": "Projet de formation",
+    "version": "1",
+    "type": "none",
+    "spipu/html2pdf": "^5.2",
+    "license": "none",
+    "authors": [
+        {
+            "name": "RGIL2025EPCCI"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php":">=8.0"
+    }
+}
