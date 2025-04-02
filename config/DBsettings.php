@@ -32,4 +32,5 @@ class DatabaseSettings{
     //     //SQL Server password
     //     $this->password = '';
     // }
+    // CE fichier doit etre dans gitignore
 }
