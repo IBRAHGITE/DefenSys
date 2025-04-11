@@ -19,7 +19,7 @@ class DatabaseSettings{
         $this->password = 'Adoo7509';
     }
 
-    // MYSQL
+    // MYSQL 
     // function __construct(){
     //     //MYSQL instance
     //     $this->hostname='localhost';
@@ -33,4 +33,4 @@ class DatabaseSettings{
     //     $this->password = '';
     // }
     // CE fichier doit etre dans gitignore
-}
+} 
