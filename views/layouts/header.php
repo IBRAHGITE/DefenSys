@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../public/bootsrap/style.css">
+    <!-- <link rel="stylesheet" src="../../public/bootsrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" src="../../public/styles/style.css"> 
+    <link rel="stylesheet" src="../../public/bootsrap/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Document</title>
+    <title>DefenSys</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+<div class="toast-container position-fixed top-0 end-0 p-3 ">
+    
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" data-bs-delay="5000">
+      <div class="toast-header">
+        <strong class="me-auto" id="toastTitle" ></strong>
+        <small></small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" ></button>
+      </div>
+      <div class="toast-body text-light">
+      </div>
+    </div>
+</div>
 
-
-</body>
-</html>
