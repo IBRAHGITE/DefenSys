@@ -14,4 +14,4 @@ else {
     require_once 'controllers/' . $page.'.php' ;
     // require_once 'views/layouts/footer.php';
     // require_once 'views/layouts/footer_bar.php';
-}   
+}    
