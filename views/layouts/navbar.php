@@ -21,9 +21,8 @@
               <li class="dropdown-submenu">
                 <a class="dropdown-item dropdown-toggle" href="#">Biens</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Véhicules</a></li>
-                  <li><a class="dropdown-item" href="#">Motos</a></li>
-                  <li><a class="dropdown-item" href="#">Machines</a></li>
+                  <li><a class="dropdown-item" href="#">Batiments</a></li>
+                  <li><a class="dropdown-item" href="#">Zones</a></li>
                 </ul>
               </li>
   
@@ -34,18 +33,89 @@
                   <li><a class="dropdown-item" href="#">Vol drone</a></li>
                   <li><a class="dropdown-item" href="#">Surveillance statique</a></li>
                   <li><a class="dropdown-item" href="#">Escorte</a></li>
+                  <li><a class="dropdown-item" href="#">Poste de garde</a></li>
+                  <li><a class="dropdown-item" href="#">Daily report</a></li>
+                  <li><a class="dropdown-item" href="#">Weekly report</a></li>
+                  <li><a class="dropdown-item" href="#">Cr Drone</a></li>
+                  <li><a class="dropdown-item" href="#">Strategie securitaire</a></li>
+
+                </ul>
+              </li>
+              <!-- Sous-menu Moyens -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Moyens</a>
+                <ul class="dropdown-menu multi-column" >
+                  <li><a class="dropdown-item" href="#">Radios</a></li>
+                  <li><a class="dropdown-item" href="#">Batterie radios</a></li>
+                  <li><a class="dropdown-item" href="#">Telephones satellites</a></li>
+                  <li><a class="dropdown-item" href="#">Marque et modeles</a></li>
+                  <li><a class="dropdown-item" href="#">Véhicules</a></li>
+                  <li><a class="dropdown-item" href="#">Maintenance</a></li>
+                  <li><a class="dropdown-item" href="#">Drones</a></li>
+                  <li><a class="dropdown-item" href="#">Batteries drones</a></li>
+                  <li><a class="dropdown-item" href="#">Materiels d'eclairage</a></li>
+                  <li><a class="dropdown-item" href="#">Groupes electrogenes</a></li>
+                  <li><a class="dropdown-item" href="#">Armes</a></li>
+                  <li><a class="dropdown-item" href="#">Munitions</a></li>
+                </ul>
+              </li>
+              <!-- Sous-menu Personnes -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Personnes</a>
+                <ul class="dropdown-menu multi-column" >
+                  <li><a class="dropdown-item" href="#">Ajouter une personnes</a></li>
+                  <li><a class="dropdown-item" href="#">Liste integrale</a></li>
+                  <li><a class="dropdown-item" href="#">Departements</a></li>
+                  <li><a class="dropdown-item" href="#">Fonctions</a></li>
+                  <li><a class="dropdown-item" href="#">Compagnies</a></li>
+                  <li><a class="dropdown-item" href="#">Forces de securite</a></li>
+                  <li><a class="dropdown-item" href="#">Compagnie de securite</a></li>
                 </ul>
               </li>
   
             </ul>
           </li>
         </ul>
-        <li class="nav-item">
-          <a class="nav-link" href="./users&var=index">Fonctionnalités</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Àpropos</a>
-        </li>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mise en place
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="gestionDropdown">
+  
+              <!-- Sous-menu Biens -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item" href="#">Dashboard</a>
+                
+              </li>
+  
+              <!-- Sous-menu Activités -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Personnel</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Groupe</a></li><hr>
+                  <li><a class="dropdown-item" href="#">Equipements</a></li><hr>
+                  <li><a class="dropdown-item" href="#">Agent</a></li>
+                </ul>
+              </li>
+              <!-- Sous-menu Moyens -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Shift</a>
+                <ul class="dropdown-menu multi-column" >
+                  <li><a class="dropdown-item" href="#">Ajout</a></li>
+                  <li><a class="dropdown-item" href="#">Jour</a></li>
+                  <li><a class="dropdown-item" href="#">Nuit</a></li>
+                  <li><a class="dropdown-item" href="#">Historique</a></li>
+                </ul>
+              </li>
+              <!-- Sous-menu Personnes -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item" href="#">Carte general</a>
+              </li>
+  
+            </ul>
+          </li>
+        </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,6 +127,21 @@
               </li>
               <li class="dropdown-submenu">
                 <a class="dropdown-item" href="#">Log des Utilisateurs</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Aide
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="gestionDropdown">
+              <li class="-submenu">
+                <a class="dropdown-item" href="#">Document d'aide </a>
+              </li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item" href="#">A propos</a>
               </li>
             </ul>
           </li>
@@ -106,5 +191,17 @@
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
 }
+.multi-column {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px; /* ajuste selon tes besoins */
+    padding: 10px;
+  }
+  
+  .multi-column li {
+    width: 33.33%; /* 3 colonnes */
+    list-style: none;
+  }
+  
 </style>
 
