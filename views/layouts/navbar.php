@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse" id="navbarContent">
       <!-- Liens de navigation au centre -->
-      <ul class="navbar-nav mb-2 mb-lg-0 ms-4">
+      <ul class="navbar-nav mb-2 mb-lg-0 ms-4 ">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,11 +52,11 @@
               Utilisateurs 
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="gestionDropdown">
-              <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle" href="./users&var=index">Liste</a>
+              <li class="-submenu">
+                <a class="dropdown-item" href="./?page=users&var=index">Liste</a>
               </li>
               <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle" href="#">Log des Utilisateurs</a>
+                <a class="dropdown-item" href="#">Log des Utilisateurs</a>
               </li>
             </ul>
           </li>
