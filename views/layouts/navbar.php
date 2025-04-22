@@ -93,8 +93,10 @@
               <li class="dropdown-submenu">
                 <a class="dropdown-item dropdown-toggle" href="#">Personnel</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Groupe</a></li><hr>
-                  <li><a class="dropdown-item" href="#">Equipements</a></li><hr>
+                  <li><a class="dropdown-item" href="#">Groupe</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Equipements</a></li>
+                  <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Agent</a></li>
                 </ul>
               </li>
