@@ -13,9 +13,9 @@ document.querySelectorAll('.dropdown-submenu > a').forEach(function (element) {
       // Activer ou désactiver ce sous-menu
       this.parentElement.classList.toggle('show');
     });
-    if (getUrlParameter('var')=='index') {
-        alert('pageUSer')
-    }
+    // if (getUrlParameter('var')=='index') {
+    //     // alert('pageUSer')
+    // }
     // Fermer sous-menus quand on clique ailleurs   
     document.addEventListener('click', function (e) {
       if (!element.parentElement.contains(e.target)) {

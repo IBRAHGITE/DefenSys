@@ -49,11 +49,11 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Utilisateurs 
+              Configuraton
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="gestionDropdown">
               <li class="-submenu">
-                <a class="dropdown-item" href="./?page=users&var=index">Liste</a>
+                <a class="dropdown-item" href="./?page=users&var=index">Liste des utilisateurs </a>
               </li>
               <li class="dropdown-submenu">
                 <a class="dropdown-item" href="#">Log des Utilisateurs</a>

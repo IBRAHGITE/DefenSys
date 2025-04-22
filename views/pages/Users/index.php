@@ -1,4 +1,4 @@
-
+<?php var_dump($users);die; ?>
 <div id="tableExample" data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;email&quot;,&quot;age&quot;],&quot;page&quot;:5,&quot;pagination&quot;:true}">
                         <div class="table-responsive">
                           <table class="table table-sm fs-9 mb-0">
