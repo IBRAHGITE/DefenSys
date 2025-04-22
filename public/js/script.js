@@ -116,3 +116,4 @@ function getUrlParameter(sParam) {
     }
     return false;
 };      
+let table = new DataTable('#normalTable');

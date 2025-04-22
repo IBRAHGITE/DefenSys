@@ -3,6 +3,21 @@
     <div class="page-body">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel-heading">
+                                <nav aria-label="breadcrumb"  class="col-lg-11 col-md-10 col-sm-10">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">Gestion</li>
+                                        <li class="breadcrumb-item">Moyens</li>
+                                        <li class="breadcrumb-item exportTitle">Machines</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Liste</li>
+                                    </ol>
+                                </nav>
+                            <div class="col-lg-offset-11 col-sm-offset-10 col-md-offset-10 col-xs-offset-1">
+                                <a href="index.php?page=Machines&var=create&elt=Machines"><button
+                                        class="btn btn-primary form-inline"><i class="icofont icofont-ui-add"></i>
+                                        Ajouter</button></a>
+                            </div>
+                        </div>
                 <div class="panel panel-default">
                 <!-- <form method="POST" action="?page=weekly&var=recherche">
                     <div class="d-flex justify-content-center">
@@ -38,35 +53,53 @@
                             <table id="normalTable" class="table table-borderles table-hover" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Utilisateur</th>
-                                        <th>Nom</th>
-                                        <th>Prénom(S)</th>
-                                        <th>Statut</th>
-                                        <th>Dernière connexion</th>
+                                        <th>Immatriculation</th>
+                                        <th>Marque</th>
+                                        <th>Modèle</th>
+                                        <th>Type</th>
+                                        <th>Couleur </th>
                                         <th>Actions </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    foreach ($users AS $value) {?>
+                                        if (!empty($vehicules && is_array($vehicules))) {
+                                    
+                                    foreach ($vehicules as $key => $value) {?>
                                         
                                     <tr>
-                                    <td><?=  $value['username']; ?></td>
-                                        <td><?= $value['firstname'] ?></td>
-                                        <td><?= $value['lastname'] ?></td>
-                                        <td></td>
-                                        <td><?= $value['lastLogin'];?></td>
+                                    <td><?=  $value['immatriculation']; ?></td>
+                                        <td><?= $value['marque'] ?></td>
+                                        <td><?= $value['model'] ?></td>
+                                        <td><?= $value['type'];?></td>
+                                        <td><?= $value['couleur'];?></td>
                                         <td>
                                             <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
                                                 class="btn-no-deco">
                                                 <button class="btn btn-outline-primary btn-sm" title="Voir détails"><i
                                                         class="bi bi-eye"></i></button>
+                                                  </a>
+                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
+                                                class="btn-no-deco">
+                                                <button class="btn btn-outline-primary btn-sm" title="Voir détails"><i
+                                                        class="bi bi-edit"></i></button>
+                                            </a>
+                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
+                                                class="btn-no-deco">
+                                                <button class="btn btn-outline-danger btn-sm" title="Voir détails"><i
+                                                        class="bi bi-trash"></i></button>
                                             </a>
 
                                         </td>
                                         
                                     </tr>
-                                    <?php }?>
+                                    <?php }}else{?>
+                                        <tr><td colspan="6" class="text-center">
+                                            <div role="alert">
+                                                Aucun véhicule trouvé.
+                                            </div>
+                                        </td></tr>
+                                        <?php }?>
                                 </tbody>
                             </table>
                         </div>

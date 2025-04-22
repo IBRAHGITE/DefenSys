@@ -86,7 +86,7 @@ class Modele extends ConnexionDB
         try {
             $ps_query = "SET NOCOUNT ON;EXEC PS_FREE_QUERY " . (string) "'$operation'";
             $this->dataQuery = $ps_query;
-            var_dump($ps_query);
+            // var_dump($ps_query);
             return $this->dbQuery($this->dataQuery);
         } catch (PDOException $e) {
             return $e->getMessage();
