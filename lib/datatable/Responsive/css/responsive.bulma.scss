@@ -1,0 +1,16 @@
+
+$open-button-background: #00D1B2 !default;
+
+@import 'responsive.dataTables.scss';
+
+table.dataTable > tbody > tr.child {
+	ul {
+		font-size: 1em;
+	}
+}
+
+div.modal-content {
+	padding: 20px;
+	background: white;
+	border-radius: 5px;
+}
