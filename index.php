@@ -1,6 +1,8 @@
 <?php 
     require_once 'views/layouts/header.php'; 
-    require_once 'views/layouts/navbar.php'; ?>
+    require_once 'views/layouts/navbar.php'; 
+    require_once 'config/function.php';
+    ?>
     <main class=container-fluid>
         <div class="rounded">
     <?php

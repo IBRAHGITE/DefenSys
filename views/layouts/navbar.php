@@ -63,11 +63,11 @@
               <li class="dropdown-submenu">
                 <a class="dropdown-item dropdown-toggle" href="#">Personnes</a>
                 <ul class="dropdown-menu multi-column" >
-                  <li><a class="dropdown-item" href="#">Ajouter une personnes</a></li>
-                  <li><a class="dropdown-item" href="#">Liste integrale</a></li>
-                  <li><a class="dropdown-item" href="#">Departements</a></li>
+                  <li><a class="dropdown-item" href="#">Ajouter une personne</a></li>
+                  <li><a class="dropdown-item" href="./?page=personne&var=index">Liste integrale</a></li>
+                  <li><a class="dropdown-item" href="./?page=departement&var=index">Departements</a></li>
                   <li><a class="dropdown-item" href="#">Fonctions</a></li>
-                  <li><a class="dropdown-item" href="#">Compagnies</a></li>
+                  <li><a class="dropdown-item" href="./?page=compagnie&var=index">Compagnies</a></li>
                   <li><a class="dropdown-item" href="#">Forces de securite</a></li>
                   <li><a class="dropdown-item" href="#">Compagnie de securite</a></li>
                 </ul>

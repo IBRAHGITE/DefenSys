@@ -49,7 +49,7 @@
             <div class="col-md-10 col-sm-10 col-xs-12">
                 <select id="marque_vehicule" name="marque_vehicule" class="form-control" required>
                 <option value="">Choisir le modèle ...</option>
-                    <?php if (isset($liste_modele)) { ?>
+                    <?php if (isset($liste_modeles)) { ?>
                         <?php foreach ($liste_modeles as $key => $site) { ?>
                             <option value="<?php echo $site['libelle'] ?>">
                                 <?php echo $site['libelle']  ?>
