@@ -7,12 +7,12 @@
                 <nav aria-label="breadcrumb"  class="col-lg-11 col-md-10 col-sm-10">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">Gestion</li>
-                        <li class="breadcrumb-item">Moyens</li>
-                        <li class="breadcrumb-item exportTitle">Machines</li>
+                        <li class="breadcrumb-item">Personnes</li>
+                        <li class="breadcrumb-item exportTitle">Compagnie de securite</li>
                         <li class="breadcrumb-item active" aria-current="page">Liste</li>
                     </ol>
                     <div class="d-flex justify-content-end margin-bottom-2">
-                        <a href="index.php?page=vehicule&var=create&elt=Vehicules"><button
+                        <a href="index.php?page=cds&var=create&elt=Compagnie de securite"><button
                             class="btn btn-primary form-inline"><i class="icofont icofont-ui-add"></i>
                             Ajouter</button>
                         </a>
@@ -25,39 +25,31 @@
                             <table id="normalTable" class="table bor table-borderles table-hover" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Immatriculation</th>
-                                        <th>Marque</th>
-                                        <th>Modèle</th>
-                                        <th>Type</th>
-                                        <th>Couleur </th>
+                                        <th>Numero</th>
+                                        <th>Nom</th>
                                         <th>Actions </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php 
-                                        if (!empty($vehicules && is_array($vehicules))) {
-                                    
-                                    foreach ($vehicules as $key => $value) {?>
-                                        
+                                    if (!empty($fds && is_array($fds))) {
+                                    foreach ($fds as $key => $value) {?>
                                     <tr>
-                                    <td><?=  $value['immatriculation']; ?></td>
-                                        <td><?= $value['marque'] ?></td>
-                                        <td><?= $value['model'] ?></td>
-                                        <td><?= $value['type'];?></td>
-                                        <td><?= $value['couleur'];?></td>
+                                    <td><?=  $value['numero']; ?></td>
+                                        <td><?= $value['nom'] ?></td>
                                         <td>
-                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
+                                            <a href="index.php?page=fds&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
                                                 class="btn-no-deco">
                                                 <button class="btn btn-outline-primary btn-sm" title="Voir détails"><i
                                                         class="bi bi-eye"></i></button>
                                                   </a>
-                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
+                                            <a href="index.php?page=fds&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
                                                 class="btn-no-deco">
                                                 <button class="btn btn-outline-primary btn-sm" title="Modifier">
                                                         <i class="bi bi-pencil-square"></i>
                                                     </button>
                                             </a>
-                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
+                                            <a href="index.php?page=fds&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
                                                 class="btn-no-deco">
                                                 <button class="btn btn-outline-danger btn-sm" title="Supprimer"><i
                                                         class="bi bi-trash"></i></button>
@@ -69,7 +61,7 @@
                                     <?php }}else{?>
                                         <tr><td colspan="6" class="text-center">
                                             <div role="alert">
-                                                Aucun véhicule trouvé.
+                                                Aucune force de sécurité trouvé.
                                             </div>
                                         </td></tr>
                                         <?php }?>

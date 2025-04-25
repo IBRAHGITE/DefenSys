@@ -68,8 +68,8 @@
                   <li><a class="dropdown-item" href="./?page=departement&var=index">Departements</a></li>
                   <li><a class="dropdown-item" href="#">Fonctions</a></li>
                   <li><a class="dropdown-item" href="./?page=compagnie&var=index">Compagnies</a></li>
-                  <li><a class="dropdown-item" href="#">Forces de securite</a></li>
-                  <li><a class="dropdown-item" href="#">Compagnie de securite</a></li>
+                  <li><a class="dropdown-item" href="./?page=fds&var=index">Forces de securite</a></li>
+                  <li><a class="dropdown-item" href="./?page=cds&var=index">Compagnie de securite</a></li>
                 </ul>
               </li>
   

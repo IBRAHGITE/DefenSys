@@ -37,7 +37,7 @@
                                 <tbody>
                                     <?php 
                                     if(isset($personne) && !empty($personne) && is_array($personne)){
-                                    foreach ($personne AS $value) {?>
+                                    foreach ($personne as $key => $value) { ?>
                                     <tr>
                                         <td><?=  $value['username']; ?></td>
                                         <td><?= $value['firstname'] ?></td>
