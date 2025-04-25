@@ -8,6 +8,10 @@ if (!empty($_GET) && $_GET['var'] == 'index') {
     $vari = 'shVar';
     include(dirname(__FILE__) . '/../views/pages/Vehicule/show.php');
 } elseif (!empty($_GET) && $_GET['var'] == 'create') {
+    $liste_marques = $model->getProcedureFree("SELECT * FROM marque WHERE type = 'voiture'");
+    // $liste_modeles = $model->getProcedureFree("SELECT * FROM modele");
+    $liste_couleurs = $model->getProcedureFree("SELECT * FROM couleur");
+    // var_dump($liste_modeles, $liste_couleurs, $liste_marques);
     include(dirname(__FILE__) . '/../views/pages/Vehicule/create.php');
 } elseif (!empty($_GET) && $_GET['var'] == 'store') {
     $model->getProcedureFree("INSERT INTO vehicule (marque, modele, annee, immatriculation) VALUES ('" . $_POST['marque'] . "', '" . $_POST['modele'] . "', '" . $_POST['annee'] . "', '" . $_POST['immatriculation'] . "')");

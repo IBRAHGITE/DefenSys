@@ -116,31 +116,32 @@ function getUrlParameter(sParam) {
     }
     return false;
 };      
-let table = new DataTable('#normalTable');
-
+$(document).ready(function () {
+    $('#normalTable').DataTable();
+  });
 //tinymce
 
-tinymce.init({
-    license_key: 'gpl',
-    selector: '.csmnote',
-    plugins: 'lists table',
-    branding: false, // Enlève "Build with TinyMCE"
-    menubar: false,
-    paste_auto_cleanup_on_paste: true,  // Active le nettoyage automatique
-    paste_remove_styles: true,          // Supprime les styles CSS collés
-    paste_remove_spans: true,           // Supprime les <span> collés
-    paste_strip_class_attributes: 'all', // Supprime toutes les classes CSS
-    paste_as_text:true,
-    statusbar: false,
-    toolbar: [
-        'bold underline|align numlist bullist| forecolor backcolor | indent outdent | fontsize | hr | removeformat | clearContent'
-    ],
-    setup: function (editor) {
-    editor.ui.registry.addButton('clearContent', {
-        icon: 'remove',
-        onAction: function () {
-        editor.setContent('');
-        }
-    });
-    }
-});
+// tinymce.init({
+//     license_key: 'gpl',
+//     selector: '.csmnote',
+//     plugins: 'lists table',
+//     branding: false, // Enlève "Build with TinyMCE"
+//     menubar: false,
+//     paste_auto_cleanup_on_paste: true,  // Active le nettoyage automatique
+//     paste_remove_styles: true,          // Supprime les styles CSS collés
+//     paste_remove_spans: true,           // Supprime les <span> collés
+//     paste_strip_class_attributes: 'all', // Supprime toutes les classes CSS
+//     paste_as_text:true,
+//     statusbar: false,
+//     toolbar: [
+//         'bold underline|align numlist bullist| forecolor backcolor | indent outdent | fontsize | hr | removeformat | clearContent'
+//     ],
+//     setup: function (editor) {
+//     editor.ui.registry.addButton('clearContent', {
+//         icon: 'remove',
+//         onAction: function () {
+//         editor.setContent('');
+//         }
+//     });
+//     }
+// });

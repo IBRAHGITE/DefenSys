@@ -16,5 +16,6 @@
     }   ?>
     </div>
     </main>
+    <?php include_once 'views/layouts/footer.php'; ?>
     <?php require_once 'views/layouts/footer.php'; ?>
     <?php require_once 'views/layouts/footer_bar.php'; ?>
