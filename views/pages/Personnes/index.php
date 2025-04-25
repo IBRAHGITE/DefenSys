@@ -10,9 +10,9 @@
                             <li class="breadcrumb-item">Personnes</li>
                             <li class="breadcrumb-item exportTitle">Liste integrale</li>
                         </ol>
-                        <div class="d-flex justify-content-end margin-bottom-2">
+                        <div class="d-flex justify-content-end align-items-end margin-bottom-2">
                         <a href="index.php?page=personne&var=create&elt=Ajouter une personne"><button
-                            class="btn btn-primary form-inline"><i class="icofont icofont-ui-add"></i>
+                            class="btn btn-primary form-inline"><i class="fa-duotone fa-solid fa-plus"></i>
                             Ajouter</button>
                         </a>
                     </div>
@@ -27,7 +27,6 @@
                                         <th>Nom</th>
                                         <th>Prénom(S)</th>
                                         <th>Date de naissance</th>
-                                        <th>Compagnie</th>
                                         <th>Departement</th>
                                         <th>Fonction</th>
                                         <th>Blacklist</th>
@@ -36,19 +35,49 @@
                                 </thead>
                                 <tbody>
                                     <?php 
-                                    if(isset($personne) && !empty($personne) && is_array($personne)){
-                                    foreach ($personne as $key => $value) { ?>
+                                    if(isset($personnes) && !empty($personnes) && is_array($personnes)){
+                                    foreach ($personnes as $key => $value) { ?>
                                     <tr>
-                                        <td><?=  $value['username']; ?></td>
                                         <td><?= $value['firstname'] ?></td>
                                         <td><?= $value['lastname'] ?></td>
-                                        <td></td>
-                                        <td><?= $value['lastLogin'];?></td>
+                                        <td><?= $value['dateNaissance'] ?></td>
+                                        <td><?= $value['departement'];?></td>
+                                        <td><?= $value['fonction'];?></td>
                                         <td>
-                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
+                                            <?php
+                                            if ($value['blacklist'] == 1) {
+                                                echo '<span class="badge badge-danger">Oui</span>';
+                                            } else {
+                                                echo '<span class="badge badge-success">Non</span>';
+                                            }
+                                            ?> 
+                                        </td>
+                                        <td>
+                                            <?php if ($value['blacklist'] == 1) { ?>
+                                                <a href="index.php?page=personne&var=unblacklist&id=<?= base64_encode($value['id']); ?>&elt=Personnes"
+                                                    class="btn-no-deco">
+                                                    <button class="btn btn-outline-success btn-sm" title="Déblacklister"><i class="fa-duotone fa-solid fa-check"></i></button>
+                                                </a>
+                                            <?php }else{?>
+                                            <a href="index.php?page=personne&var=blacklist&id=<?= base64_encode($value['id']); ?>&elt=Personnes"
+                                                class="btn-no-deco">
+                                                <button class="btn btn-outline-danger btn-sm" title="Blacklister"><i class="fa-duotone fa-solid fa-xmark"></i></button>
+                                            </a>
+                                            <?php } ?>
+                                            <a href="index.php?page=personne&var=show&id=<?= base64_encode($value['id']); ?>&elt=Personnes"
                                                 class="btn-no-deco">
                                                 <button class="btn btn-outline-primary btn-sm" title="Voir détails"><i
-                                                        class="bi bi-eye"></i></button>
+                                                class="bi bi-eye"></i></button>
+                                            </a>
+                                            <a href="index.php?page=personne&var=edit&id=<?= base64_encode($value['id']); ?>&elt=Personnes"
+                                                class="btn-no-deco">
+                                                <button class="btn btn-outline-primary btn-sm" title="Modifier"><i
+                                                class="bi bi-pencil"></i></button>
+                                            </a>
+                                            <a href="index.php?page=personne&var=delete&id=<?= base64_encode($value['id']); ?>&elt=Personnes"
+                                                class="btn-no-deco">
+                                                <button class="btn btn-outline-danger btn-sm" title="Supprimer"><i
+                                                class="bi bi-trash"></i></button>
                                             </a>
                                         </td>
                                     </tr>

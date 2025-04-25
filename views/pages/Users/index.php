@@ -4,35 +4,6 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="panel panel-default">
-                <!-- <form method="POST" action="?page=weekly&var=recherche">
-                    <div class="d-flex justify-content-center">
-                    
-                        <div class="p-2">
-                            <label class="fw-bold">Semaine</label>
-                            <input type="number" name="numero_semaine" class="form-control  mt-1 formFields" min="1" max="53"
-                                placeholder="numero de semaine" value="<?php echo isset($old['numero_semaine']) ? $old['numero_semaine'] : ''; ?>">
-                        </div>
-                        <div class="p-2">
-                            
-                            <label class="fw-bold">Site</label>
-                            <select class="form-select mt-1 formFields" name="sites">
-                                <option value="">Select</option>
-                                <?php foreach ($allSite as $key => $value) { ?>
-                                <option <?php echo isset($old['sites']) && ( $key == $old['sites']) ? 'selected' : ''; ?>
-                                    value="<?= $key ?>"><?= $value ?></option>
-
-                                <?php } ?>
-                            </select>
-                        </div>
-
-                        <div class="p-2">
-                            <div class="d-grid gap-2 d-md-flex mt-4 p-1">
-                                <button class="btn btn-outline-primary me-md-2" type="submit" id="submit"> Rechercher</button>
-                                <button class="btn btn-outline-dark" id="form_reset" type="reset">Réinitialiser</button>
-                            </div>
-                        </div>
-                    </div>
-                </form> -->
                         <div class="panel-body">
                         <div class="table-responsive dt-responsive">
                             <table id="normalTable" class="table table-borderles table-hover" style="width:100%">

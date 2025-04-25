@@ -1,11 +1,10 @@
-<?php var_dump($personne); ?>
 <div class="panel-heading">
     <nav aria-label="breadcrumb"  class="col-lg-11 col-md-10 col-sm-10">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Gestion</li>
             <li class="breadcrumb-item">Moyens</li>
             <li class="breadcrumb-item exportTitle">Personnes</li>
-            <li class="breadcrumb-item active" aria-current="page">Ajouter une personne</li>
+            <li class="breadcrumb-item active" aria-current="page">Modifier une personne</li>
         </ol>
         <div class="d-flex justify-content-end margin-bottom-2">
             <a href="index.php?page=personne&var=index&elt=Liste des personne"><button
@@ -26,19 +25,26 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nom <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
-                <input type="text" maxlength="50" class="form-control" name="nom" autocomplete="off" required />
+                <input type="text" maxlength="50" class="form-control"
+                 value="<?php echo (isset($personne) && !empty($personne['firstname']) ? $personne['firstname'] : ''); ?>" 
+                 name="nom" autocomplete="off" required />
+
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Prenom(s) <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
-                <input type="text" maxlength="50" class="form-control" name="prenom" autocomplete="off" required />
+                <input type="text" maxlength="50" class="form-control"
+                value="<?php echo (isset($personne) && !empty($personne['lastname']) ? $personne['lastname'] : ''); ?>"
+                 name="prenom" autocomplete="off" required />
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Date de naissance <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" name="datenais" autocomplete="off" required />
+                <input type="date" class="form-control" 
+                value="<?php echo (isset($personne) && !empty($personne['dateNaissance']) ? $personne['dateNaissance'] : ''); ?>"
+                name="datenais" autocomplete="off" required />
             </div>
         </div>
         <div class="form-group row">
