@@ -12,8 +12,12 @@ if (isset($_GET['var']) && $_GET['var'] == 'index') {
     $liste_departements = $model->getProcedureFree("SELECT * FROM departements");
     include(dirname(__FILE__) . '/../views/pages/Personnes/create.php');
 } elseif (isset($_GET['var']) && $_GET['var'] == 'store') { 
-    $model->getProcedureFree("INSERT INTO personne (nom, prenom, email) VALUES ('" . $_POST['nom'] . "', '" . $_POST['prenom'] . "', '" . $_POST['email'] . "')");
-    header('Location: index.php?page=personne&var=index');
+    $data = $_POST;
+    $model->getProcedureFree("INSERT INTO Personnes ( nom, prenom, dateNaissance, departement, fonction ) VALUES ( '" . $data['nom'] . "', '" . $data['prenom'] . "', '" . $data['datenais'] . "','" . $data['departement'] . "', '" . $data['fonction'] . "')");
+    $url = 'index.php?page=personne&var=index';
+    redirect($url);
+    
+    // header('Location: index. php?page=personne&var=index');
 } elseif (isset($_GET['var']) && $_GET['var'] == 'edit') {
     $liste_departements = $model->getProcedureFree("SELECT * FROM departements");
     $id = base64_decode($_GET['id']);

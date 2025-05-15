@@ -1,4 +1,3 @@
-<?php var_dump($personne); ?>
 <div class="panel-heading">
     <nav aria-label="breadcrumb"  class="col-lg-11 col-md-10 col-sm-10">
         <ol class="breadcrumb">
@@ -16,13 +15,13 @@
     </nav>
 </div>
 <div class="panel-body" >
-    <form method="POST" style="width: 90%; margin-left: 5%;" action="index.php?page=radio&var=store&elt=Radios">
-        <div class="form-group row">
+    <form method="POST" style="width: 90%; margin-left: 5%;" action="index.php?page=personne&var=store&elt=Ajouter une personne">
+        <!-- <div class="form-group row">
             <label class="col-sm-2 col-form-label">Matricule personne <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
                 <input type="text" maxlength="50" class="form-control" name="matricule" autocomplete="off" required />
             </div>
-        </div>
+        </div> -->
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nom <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
@@ -44,7 +43,7 @@
         <div class="form-group row">
             <label class="col-form-label col-md-2 col-sm-2 col-xs-12">Departement <sup class="text-danger">*</sup></label>
             <div class="col-md-10 col-sm-10 col-xs-12">
-                <select id="marque_vehicule" name="marque_vehicule" class="form-control" required>
+                <select id="departement" name="departement" class="form-control" required>
                 <option value="">Choisir le departement ...</option>
                     <?php if (isset($liste_departements)) { ?>
                         <?php foreach ($liste_departements as $key => $site) { ?>
