@@ -10,4 +10,7 @@
         }elseif (!empty($_GET) && $_GET['var'] == 'show') {
             $vari = 'shVar';
             include(dirname(__FILE__) . '/../views/pages/Users/show.php');
+        }elseif (!empty($_GET) && $_GET['var'] == 'create') {
+            $vari = 'shVar';
+            include(dirname(__FILE__) . '/../views/pages/Users/create.php');
         }
