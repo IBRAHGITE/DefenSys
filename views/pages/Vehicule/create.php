@@ -96,7 +96,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-form-label">Commentaires</label>
             <div class="col-sm-12">
-                <textarea id="denomination_radio" rows="4" class="form-control" name="denomination_radio"></textarea>
+                <textarea id="denomination_radio" rows="4" class="form-control note" name="denomination_radio"></textarea>
             </div>
         </div>
         <div class="panel-footer d-flex justify-content-end">
