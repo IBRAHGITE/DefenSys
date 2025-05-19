@@ -119,6 +119,8 @@ function getUrlParameter(sParam) {
 $(document).ready(function () {
     $('#normalTable').DataTable();
   });
+
+  
 //tinymce
 
 // tinymce.init({

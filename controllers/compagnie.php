@@ -4,4 +4,6 @@
     if (!empty($_GET) && $_GET['var'] == 'index') {
         $compagnies = $model->getProcedureFree("SELECT * FROM compagnie");
         include(dirname(__FILE__) . '/../views/pages/Compagnies/index.php');
+    }elseif (!empty($_GET) && $_GET['var'] == 'store') {
+        $data = Data($_GET);
     }
