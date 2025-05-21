@@ -14,9 +14,9 @@ class DatabaseSettings{
         //SQL Server Database name
         $this->database = 'DBDefensys';
         //SQL Server username
-        $this->username = 'operas_user';
+        $this->username = 'rogerhost';
         //SQL Server password
-        $this->password = 'ops@PP2024';
+        $this->password = '1603@Host';
     }
 
     // MYSQL 
