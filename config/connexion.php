@@ -1,5 +1,5 @@
 <?php
-include_once 'dbsetting.php';
+include_once 'DBsetting.php';
 
 class ConnexionDB extends DatabaseSettings
 {
