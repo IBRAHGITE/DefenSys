@@ -38,14 +38,37 @@
                                         <tr id="row-<?= $value['id']; ?>">
                                             <td><?=  $value['libelle']; ?></td>
                                             <td>
-                                                <button type="button" data-bs-toggle="modal" data-bs-target="#data-bs-target=#staticBackdropEdit"
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#<?= $modalId; ?>"
                                                     class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil-square"></i>
                                                 </button>
-                                                <a href="./?page=departement&var=delete&id<?= base64_encode($value['id']); ?>"><button class="btn btn-outline-danger btn-sm" title="Supprimer">
+                                                <a href="./?page=departement&var=delete&id=<?= base64_encode($value['id']); ?>"><button class="btn btn-outline-danger btn-sm" title="Supprimer">
                                                     <i class="bi bi-trash"></i>
                                                 </button></a>
 
                                             </td>
+                                            <div class="modal fade" id="<?= $modalId; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="<?= $modalId; ?>.Label" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="<?= $modalId; ?>.Label">Edition de departement</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="./?page=departement&var=update" method="post">
+                                                            <div class="mb-3">
+                                                                <label for="libelle" class="form-label">Nom du departement</label>
+                                                                <input type="text" class="form-control" id="libelle" name="libelle" value=<?=$value['libelle'] ?> required>
+                                                                <input type="hidden" name="id" value="<?= $value['id']; ?>">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-success">Save</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </tr>
                                     <?php }}?>  
                                 </tbody>
@@ -85,25 +108,3 @@
   </div>
 </div>
 <!-- ModalEdit -->
-<div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropEditLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropEditLabel">Edition de departement</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="./?page=departement&var=store" method="post">
-            <div class="mb-3">
-                <label for="libelle" class="form-label">Nom du departement</label>
-                <input type="text" class="form-control" id="libelle" name="libelle" value=<?=$value['libelle'] ?> required>
-            </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success">Save</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>

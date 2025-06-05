@@ -33,28 +33,44 @@
                                     <?php 
                                         if (!empty($compagnies && is_array($compagnies))) {
                                     
-                                    foreach ($compagnies as $key => $value) {?>
-                                        
+                                    foreach ($compagnies as $key => $value) {
+                                        $modalId = "staticBackdropEdit" . $value['id']; ?>  
                                     <tr>
-                                    <td><?=  $value['libelle']; ?></td>
+                                        <td><?=  $value['libelle']; ?></td>
                                         <td>
-                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
-                                                class="btn-no-deco">
-                                                <button class="" title="Modifier">
-                                                        
-                                                    </button>
-                                            </a>
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#<?= $modalId; ?>"
                                                 class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil-square"></i>
                                             </button>
-                                            <a href="index.php?page=weekly&var=show&id=<?=  $value['id']; ?>&elt=Weekly report"
+                                            <a href="index.php?page=compagnie&var=delete&id=<?= base64_encode($value['id']); ?>"
                                                 class="btn-no-deco">
                                                 <button class="btn btn-outline-danger btn-sm" title="Supprimer"><i
-                                                        class="bi bi-trash"></i></button>
+                                                    class="bi bi-trash"></i>
+                                                </button>
                                             </a>
-
                                         </td>
-                                        
+                                            <div class="modal fade" id="<?= $modalId; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="<?= $modalId; ?>.Label" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="<?= $modalId; ?>.Label">Edition de la compagnie</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="./?page=compagnie&var=update" method="post">
+                                                            <div class="mb-3">
+                                                                <label for="libelle" class="form-label">Nom de la compagnie</label>
+                                                                <input type="text" class="form-control" id="libelle" name="libelle" value=<?=$value['libelle'] ?> required>
+                                                                <input type="hidden" name="id" value="<?= $value['id']; ?>">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-success">Save</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                     </tr>
                                     <?php }}else{?>
                                         <tr><td colspan="6" class="text-center">
@@ -85,7 +101,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="./?page=departement&var=store" method="post">
+        <form action="./?page=compagnie&var=store" method="post">
             <div class="mb-3">
                 <label for="libelle" class="form-label">Nom de la compagnie</label>
                 <input type="text" class="form-control" id="libelle" name="libelle" required>
@@ -99,31 +115,3 @@
     </div>
   </div>
 </div>
-<!-- ModalEdit -->
-<div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Ajout de compagnie</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="./?page=departement&var=store" method="post">
-            <div class="mb-3">
-                <label for="libelle" class="form-label">Nom de la compagnie</label>
-                <input type="text" class="form-control" id="libelle" name="libelle" required>
-            </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success">Save</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
-<?php if (isset($_GET['test'])) {?>
-    <h1>
-        <?= $_GET['test']; ?>
-    </h1>
-<?php }?>

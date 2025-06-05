@@ -66,7 +66,6 @@
                   <li><a class="dropdown-item" href="./?page=personne&var=create">Ajouter une personne</a></li>
                   <li><a class="dropdown-item" href="./?page=personne&var=index">Liste integrale</a></li>
                   <li><a class="dropdown-item" href="./?page=departement&var=index">Departements</a></li>
-                  <li><a class="dropdown-item" href="#">Fonctions</a></li>
                   <li><a class="dropdown-item" href="./?page=compagnie&var=index">Compagnies</a></li>
                   <li><a class="dropdown-item" href="./?page=fds&var=index">Forces de securite</a></li>
                   <li><a class="dropdown-item" href="./?page=cds&var=index">Compagnie de securite</a></li>
