@@ -15,11 +15,14 @@
     </nav>
 </div>
 <div class="panel-body" >
-    <form method="POST" style="width: 90%; margin-left: 5%;" action="index.php?page=radio&var=store&elt=Radios">
+    <form method="POST" style="width: 90%; margin-left: 5%;" action="index.php?page=personne&var=update&elt=ModifierPersonne">
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Matricule personne <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
-                <input type="text" maxlength="50" class="form-control" name="matricule" autocomplete="off" required />
+                <input type="text" maxlength="50" class="form-control"
+                value="<?php echo (isset($personne) && !empty($personne['matricule']) ? $personne['matricule'] : ''); ?>" 
+                name="matricule" autocomplete="off" required />
+                <input type="hidden" name="id" value="<?php echo (isset($personne) ? $personne['id'] : ''); ?>" />
             </div>
         </div>
         <div class="form-group row">
@@ -50,11 +53,11 @@
         <div class="form-group row">
             <label class="col-form-label col-md-2 col-sm-2 col-xs-12">Departement <sup class="text-danger">*</sup></label>
             <div class="col-md-10 col-sm-10 col-xs-12">
-                <select id="marque_vehicule" name="marque_vehicule" class="form-control" required>
+                <select id="marque_vehicule" name="departement" class="form-control" required>
                 <option value="">Choisir le departement ...</option>
                     <?php if (isset($liste_departements)) { ?>
                         <?php foreach ($liste_departements as $key => $site) { ?>
-                            <option value="<?php echo $site['libelle'] ?>">
+                            <option selected value="<?php echo $site['libelle'] ?>">
                                 <?php echo $site['libelle']  ?>
                             </option>
                     <?php }
@@ -66,13 +69,16 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Fonction <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
-                <input type="text" maxlength="50" class="form-control" name="fonction" autocomplete="off" required />
+                <input type="text" maxlength="50" class="form-control" name="fonction" autocomplete="off"
+                value = "<?php echo (isset($personne) && !empty($personne['fonction']) ? $personne['fonction'] : ''); ?>" required />
             </div>
         </div>        
         <div class="form-group row">
             <label class="col-sm-12 col-form-label">Commentaires</label>
             <div class="col-sm-12">
-                <textarea id="" rows="4" class="form-control" name="commentaire"></textarea>
+                <textarea id="" rows="4" class="form-control" name="commentaire">
+                    <?php echo (isset($personne) && !empty($personne['commentaire']) ? $personne['commentaire'] : ''); ?>
+                </textarea>
             </div>
         </div>
         <div class="panel-footer d-flex justify-content-end">

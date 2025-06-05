@@ -23,6 +23,7 @@
                                 <table id="normalTable" class="table table-borderles table-hover" style="width:100%">
                                     <thead>
                                         <tr>
+                                            <th>Matricule</th>
                                             <th>Nom</th>
                                             <th>Prénom(S)</th>
                                             <th>Date de naissance</th>
@@ -37,6 +38,7 @@
                                         if(isset($personnes) && !empty($personnes) && is_array($personnes)){
                                         foreach ($personnes as $key => $value) { ?>
                                         <tr>
+                                            <td><?= $value['matricule'] ?></td>
                                             <td><?= $value['firstname'] ?></td>
                                             <td><?= $value['lastname'] ?></td>
                                             <td><?= $value['dateNaissance'] ?></td>

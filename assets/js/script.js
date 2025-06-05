@@ -14,7 +14,7 @@ document.querySelectorAll('.dropdown-submenu > a').forEach(function (element) {
       this.parentElement.classList.toggle('show');
     });
     // if (getUrlParameter('var')=='index') {
-    //     // alert('pageUSer')
+    //     alert('pageUSer')
     // }
     // Fermer sous-menus quand on clique ailleurs   
     document.addEventListener('click', function (e) {
@@ -116,32 +116,30 @@ function getUrlParameter(sParam) {
     }
     return false;
 };      
-$(document).ready(function () {
-    $('#normalTable').DataTable();
-  });
-//tinymce
+$('#normalTable').DataTable({
+    language: {
+    emptyTable: "AUCUNE DONNEES" // ou un message personnalisé
+}
+}); 
 
-tinymce.init({
-    license_key: 'gpl',
-    selector: '.note',
-    plugins: 'lists table',
-    branding: false, // Enlève "Build with TinyMCE"
-    menubar: false,
-    paste_auto_cleanup_on_paste: true,  // Active le nettoyage automatique
-    paste_remove_styles: true,          // Supprime les styles CSS collés
-    paste_remove_spans: true,           // Supprime les <span> collés
-    paste_strip_class_attributes: 'all', // Supprime toutes les classes CSS
-    paste_as_text:true,
-    statusbar: false,
-    toolbar: [
-        'bold underline|align numlist bullist| forecolor backcolor | indent outdent | fontsize | hr | removeformat | clearContent'
-    ],
-    setup: function (editor) {
-    editor.ui.registry.addButton('clearContent', {
-        icon: 'remove',
-        onAction: function () {
-        editor.setContent('');
-        }
-    });
-    }
-});
+// $('.deleteD').click(function (e) {
+//     e.preventDefault();
+//     let id = $(this).data('id');
+//     let rowId = $(this).data('row'); 
+//     let deleteD = jsonData('deletDepartement', { id: id });
+//     if (deleteD) {
+//         showToast('Suppression réussie', 'success');
+//         // $('#' + rowId).addClass();    
+//     } else {
+//         showToast('Erreur lors de la suppression', 'danger');
+//     }
+// })
+    
+// function showToast(message, type = 'success') {
+//     let toastEl = document.getElementById('toastNotif');
+//     let toastBody = document.getElementById('toastBody');
+//     toastBody.innerText = message;
+//     toastEl.className = `toast align-items-center text-bg-${type} border-0`;
+//     let toast = new bootstrap.Toast(toastEl);
+//     toast.show();
+// }

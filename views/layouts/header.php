@@ -15,16 +15,13 @@
     <title>DefenSys</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
-<div class="toast-container position-fixed top-0 end-0 p-3 ">
-    
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" data-bs-delay="5000">
-      <div class="toast-header">
-        <strong class="me-auto" id="toastTitle" ></strong>
-        <small></small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" ></button>
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1055">
+  <div id="toastNotif" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastBody">
+        Opération réussie !
       </div>
-      <div class="toast-body text-light">
-      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fermer"></button>
     </div>
-</div>
-
+  </div>
+</div>  
