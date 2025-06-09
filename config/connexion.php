@@ -13,6 +13,7 @@ class ConnexionDB extends DatabaseSettings
     private $dbName;
     private $user;
     private $pass;
+    private $connex;
 
 
     function __construct()
@@ -73,3 +74,4 @@ class ConnexionDB extends DatabaseSettings
         }
     }
 }
+ 

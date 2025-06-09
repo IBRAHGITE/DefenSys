@@ -46,7 +46,24 @@ class Modele extends ConnexionDB
     * @param all choose site and country,put '' if you not choose site or country
     ** 
     */
-    public function getProcedure($ps, $operation, $data = array())
+    // public function getProcedure($ps, $operation, $data = array())
+    // {
+    //     try {
+    //         $ps_query = "SET NOCOUNT ON;EXEC $ps " . (int) $operation . ",";
+    //         foreach ($data as $key => $val) {
+    //             $ps_query .= "'$val',";
+    //         }
+    //         $ps_query = substr($ps_query, 0, -1);
+    //         $ps_query .= ";";
+    //         // var_dump($ps_query);
+    //         $this->dataQuery = $ps_query;
+    //         return $this->dbQuery($this->dataQuery);
+    //     } catch (PDOException $e) {
+    //         return $e->getMessage();
+    //     }
+    // }
+    //RECOMMANDER POUR LES SELECT
+    public function getProcedure($ps, $operation, $data = [])
     {
         try {
             $ps_query = "SET NOCOUNT ON;EXEC $ps " . (int) $operation . ",";
@@ -62,6 +79,7 @@ class Modele extends ConnexionDB
             return $e->getMessage();
         }
     }
+
 
     public function getProcedureString($ps, $operation, $data = array())
     {
@@ -80,7 +98,7 @@ class Modele extends ConnexionDB
         }
     }
 
-
+    //RECOMMANDER POUR LES INSERT ET UPDATE
     public function getProcedureFree($operation)
     {
         try {

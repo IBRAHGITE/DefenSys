@@ -80,6 +80,13 @@
                             </span>
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-lg-3 col-form-label fw-bolder">Commentaires:
+                        </label>
+                        <div class="col-sm-4 col-sm-4">
+                            <span id="pers_sang"><?= $personne[0]['commentaire']; ?></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

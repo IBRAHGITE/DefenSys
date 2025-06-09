@@ -1,3 +1,20 @@
+
+ <?php 
+ require_once __DIR__ . '/../../../config/connexion.php';
+
+$req = new ConnexionDB();
+$tables = ['marque', 'modele', 'couleur'];
+foreach ($tables as $table) {
+    ${"liste_" . $table . "s"} = $req->dbQuery("SELECT * FROM $table");}
+//$liste_marques = $req->dbQuery("SELECT * FROM marque");
+//$liste_modeles= $req->dbQuery("SELECT * FROM modele");
+//$liste_couleur= $req->dbQuery("SELECT * FROM couleur");
+
+//echo "<pre>";
+//var_dump($liste_marques);
+//echo "</pre>";
+?>
+
 <div class="panel-heading">
     <nav aria-label="breadcrumb"  class="col-lg-11 col-md-10 col-sm-10">
         <ol class="breadcrumb">
@@ -20,7 +37,7 @@
             <label class="col-form-label col-md-2 col-sm-2 col-xs-12">Type de vehicule <sup class="text-danger">*</sup></label>
             <div class="col-md-10 col-sm-10 col-xs-12">
                 <div class="col-sm-12">
-                    <label> Voiture &nbsp;&nbsp;
+                   <label> Voiture &nbsp;&nbsp;
                         <input type="radio" id="voiture" value="Voiture" name="type_vehicule" checked>
                     </label>&nbsp;&nbsp;&nbsp;
                     <label> Moto &nbsp;&nbsp;
@@ -33,30 +50,32 @@
             <label class="col-form-label col-md-2 col-sm-2 col-xs-12">Marque <sup class="text-danger">*</sup></label>
             <div class="col-md-10 col-sm-10 col-xs-12">
                 <select id="marque_vehicule" name="marque_vehicule" class="js-example-responsive form-control" required>
-                    <option value="">Choisir la marque ...</option>
-                    <?php if (isset($liste_marques)) { ?>
-                        <?php foreach ($liste_marques as $key => $site) { ?>
-                            <option value="<?php echo $site['libelle'] ?>">
-                                <?php echo $site['libelle']  ?>
+                    <option value="">Choisir la marque ...</option> 
+                    <?php if (!empty($liste_marques)): ?>
+                     <?php foreach ($liste_marques as $site): ?>
+                        <option value="<?= htmlspecialchars($site['libelle']) ?>">
+                         <?= htmlspecialchars($site['libelle']) ?>
                             </option>
-                    <?php }
-                    } ?>
+                <?php endforeach; ?>
+        <?php endif; ?>
+
                 </select>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-form-label col-md-2 col-sm-2 col-xs-12">Modèle <sup class="text-danger">*</sup></label>
             <div class="col-md-10 col-sm-10 col-xs-12">
-                <select id="marque_vehicule" name="marque_vehicule" class="form-control" required>
+     <select id="modele_vehicule" name="modele_vehicule" class="form-control" required>
                 <option value="">Choisir le modèle ...</option>
-                    <?php if (isset($liste_modeles)) { ?>
-                        <?php foreach ($liste_modeles as $key => $site) { ?>
-                            <option value="<?php echo $site['libelle'] ?>">
-                                <?php echo $site['libelle']  ?>
+                    <?php if (!empty($liste_modeles)): ?>
+                        <?php foreach ($liste_modeles as $site): ?>
+                                <option value="<?= htmlspecialchars($site['libelle']) ?>">
+                                <?= htmlspecialchars($site['libelle']) ?>
                             </option>
-                    <?php }
-                    } ?>
+                       <?php endforeach; ?>
+             <?php endif; ?>
                 </select>
+
                 <span class="text-default model_Caracter"></span>
             </div>
         </div>
@@ -69,9 +88,9 @@
         <div class="form-group row">
             <label class="col-form-label col-md-2 col-sm-2 col-xs-12">Couleur <sup class="text-danger">*</sup></label>
             <div class="col-md-10 col-sm-10 col-xs-12">
-                <select id="marque_vehicule" name="marque_vehicule" class="form-control" required>
+                <select id="couleur_vehicule" name="couleur_vehicule" class="form-control" required>
                 <option value="">Choisir la couleur ...</option>
-                        <?php foreach ($liste_couleur as $key => $site) { ?>
+                        <?php foreach ($liste_couleurs as $key => $site) { ?>
                             <option value="<?php echo $site['code'] ?>">
                                 <?php echo $site['libelle']  ?>
                             </option>

@@ -16,12 +16,12 @@
 </div>
 <div class="panel-body" >
     <form method="POST" style="width: 90%; margin-left: 5%;" action="index.php?page=personne&var=store&elt=Ajouter une personne">
-        <!-- <div class="form-group row">
+        <div class="form-group row">
             <label class="col-sm-2 col-form-label">Matricule personne <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
                 <input type="text" maxlength="50" class="form-control" name="matricule" autocomplete="off" required />
             </div>
-        </div> -->
+        </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nom <sup class="text-danger">*</sup></label>
             <div class="col-sm-10">
@@ -44,13 +44,13 @@
             <label class="col-form-label col-md-2 col-sm-2 col-xs-12">Departement <sup class="text-danger">*</sup></label>
             <div class="col-md-10 col-sm-10 col-xs-12">
                 <select id="departement" name="departement" class="form-control" required>
-                <option value="">Choisir le departement ...</option>
+                <option disabled value="">Choisir le departement ...</option>
                     <?php if (isset($liste_departements)) { ?>
-                        <?php foreach ($liste_departements as $key => $site) { ?>
-                            <option value="<?php echo $site['libelle'] ?>">
-                                <?php echo $site['libelle']  ?>
-                            </option>
-                    <?php }
+                        <?php foreach ($departements as $dep): ?>
+                        <option value="<?php echo htmlspecialchars($dep['libelle']) ?>">
+                        <?= htmlspecialchars($dep['libelle']) ?>
+                        </option>
+                    <?php endforeach;
                     } ?>
                 </select>
                 <span class="text-default model_Caracter"></span>
